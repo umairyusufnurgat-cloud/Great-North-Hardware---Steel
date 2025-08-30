@@ -6,7 +6,7 @@ This project is a **modern, responsive website** built to showcase the company�
 ---
 
 ## 🌐 Live Demo  
-👉 [Click here to view the site](https://umairyusufnurgat-cloud.github.io/Great-North-Hardware---Steel/)  
+👉 [Click here to view the site](https://umairyusufnurgat-cloud.github.io/Great-North-Hardware-Steel-Ltd/)  
 
 ---
 

@@ -371,3 +371,21 @@ footer {
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  header nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr; /* one image per row on small screens */
+  }
+
+  .page-banner h2 {
+    font-size: 1.5rem; /* smaller heading for mobile */
+  }
+}
+

@@ -58,12 +58,12 @@ nav a:hover {
 
 /* Mobile menu toggle */
 .menu-toggle {
-  display: none;
-  font-size: 1.5rem;
+  font-size: 1.5rem;   /* make it big enough */
   background: none;
   border: none;
   color: #fff;
   cursor: pointer;
+  margin-right: 10px;  /* adds space from the edge */
 }
 
 .close-btn {
@@ -352,4 +352,5 @@ footer {
     height: 160px;
   }
 }
+
 

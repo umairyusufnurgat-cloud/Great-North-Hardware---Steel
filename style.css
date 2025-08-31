@@ -104,7 +104,7 @@ nav .close-btn {
   }
 }
 
-/* Banner */
+/* Page Banner */
 .page-banner {
   background-size: cover;
   background-position: center;
@@ -121,15 +121,62 @@ nav .close-btn {
   border-radius: 5px;
 }
 
-/* Content */
-.content {
-  padding: 20px;
+/* Content Section (About, Contact) */
+.content, .about, .contact {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
   text-align: center;
+}
+
+.content h2, .about h2, .contact h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #222;
+}
+
+.content p, .about p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+form input, form textarea {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}
+
+form button {
+  padding: 12px;
+  background: #222;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #ffcc00;
+  color: #222;
 }
 
 /* Gallery */
 .gallery {
-  padding: 20px;
+  padding: 40px 20px;
   text-align: center;
 }
 
@@ -148,7 +195,7 @@ nav .close-btn {
 
 /* Products */
 .products {
-  padding: 20px;
+  padding: 40px 20px;
   text-align: center;
 }
 
@@ -173,7 +220,7 @@ nav .close-btn {
 .product-card img {
   width: 100%;
   height: 200px;
-  object-fit: contain; /* Keeps image proportions */
+  object-fit: contain; /* keeps proportions */
   border-radius: 5px;
 }
 

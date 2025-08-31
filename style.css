@@ -265,3 +265,85 @@ footer {
   color: #fff;
   margin-top: 40px;
 }
+
+/* ========== Products Page ========== */
+.products {
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Support both class names: .product-grid and .products-grid */
+.products-grid,
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #f4f4f4;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;          /* keeps cards even */
+  object-fit: cover;
+  display: block;
+}
+
+.product-card h3 {
+  margin: 12px 12px 16px;
+  font-size: 1.15rem;
+  color: #222;
+}
+
+/* If your HTML uses a .product-info wrapper (some versions do) */
+.product-info {
+  padding: 16px;
+  text-align: center;
+}
+
+.product-info p {
+  margin: 8px 0 12px;
+  color: #555;
+}
+
+.product-info a {
+  display: inline-block;
+  padding: 10px 14px;
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.product-info a:hover {
+  background: #f4a261;
+  color: #222;
+}
+
+/* Small screens tweaks */
+@media (max-width: 480px) {
+  .product-card img {
+    height: 160px;
+  }
+}

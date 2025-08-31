@@ -8,16 +8,14 @@
 </head>
 <body>
 <header>
-  <h1>Great North Hardware & Steel Ltd</h1>
-
-  <!-- Hamburger (only visible on mobile) -->
-  <div class="hamburger">&#9776;</div>
-
-  <!-- Navigation -->
-  <nav id="navbar">
-    <!-- Close button (only visible on mobile when menu is open) -->
-    <div class="close-btn">&times;</div>
-
+  <div class="logo">Great North Hardware & Steel Ltd</div>
+  <button class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </button>
+  <nav id="nav-menu">
+    <button class="close-btn" id="close-btn">
+      <i class="fas fa-times"></i>
+    </button>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="products.html">Products</a>
@@ -47,54 +45,23 @@
   <p>&copy; 2025 Great North Hardware & Steel Ltd. All Rights Reserved.</p>
 </footer>
 <script>
-(() => {
-  // helpers
-  const $ = (s) => document.querySelector(s);
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+  const closeBtn = document.getElementById("close-btn");
 
-  const nav       = $('#navbar');
-  const hamburger = document.querySelector('.hamburger');        // the ☰ button
-  const closeBtn  = document.querySelector('#navbar .close-btn'); // the X inside the nav
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.add("active");
+  });
 
-  function openMenu()  { nav?.classList.add('show');  document.body.classList.add('nav-open'); }
-  function closeMenu() { nav?.classList.remove('show');document.body.classList.remove('nav-open'); }
-  function toggleMenu(){ nav?.classList.toggle('show');document.body.classList.toggle('nav-open'); }
-
-  function bind() {
-    if (!nav || !hamburger) {
-      console.warn('Navbar or hamburger not found. Check IDs/classes.');
-      return;
-    }
-
-    // Open/close via buttons
-    hamburger.addEventListener('click', toggleMenu);
-
-    // Force the X to CLOSE (overrides any inline onclick="toggleMenu()")
-    if (closeBtn) closeBtn.onclick = closeMenu;
-
-    // Close when a nav link is tapped
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-
-    // Close on ESC
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-
-    // Optional: tap outside to close
-    document.addEventListener('click', (e) => {
-      if (!nav.classList.contains('show')) return;
-      if (!nav.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', bind);
-  } else {
-    bind();
-  }
-})();
+  closeBtn.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+  });
 </script>
 
 
 </body>
 </html>
+
 
 
 

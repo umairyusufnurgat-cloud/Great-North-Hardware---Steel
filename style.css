@@ -2,7 +2,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  padding-top: 80px; /* so content starts below fixed header */
   line-height: 1.6;
   background-color: #f9f9f9;
   color: #333;
@@ -21,13 +21,18 @@ p {
 
 /* ========== Header & Navbar ========== */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #333;
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #222;
-  color: #fff;
   padding: 15px 20px;
-  position: relative;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 header .logo {
@@ -347,3 +352,4 @@ footer {
     height: 160px;
   }
 }
+

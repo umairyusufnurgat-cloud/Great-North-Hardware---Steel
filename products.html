@@ -3,21 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products - Great North Hardware & Steel Ltd</title>
+  <title>Our Products - Great North Hardware & Steel Ltd</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="logo">Great North Hardware & Steel Ltd</div>
-    <button class="menu-toggle" id="menu-toggle">
-      <i class="fas fa-bars"></i>
-    </button>
+    <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
     <nav id="nav-menu">
-      <button class="close-btn" id="close-btn">
-        <i class="fas fa-times"></i>
-      </button>
+      <button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
@@ -25,60 +20,47 @@
     </nav>
   </header>
 
-  <!-- Page Banner -->
-  <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1350&q=80');">
+  <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1581093588401-22d6a29c9f9f?auto=format&fit=crop&w=1350&q=80');">
     <h2>Our Products</h2>
   </section>
 
-  <!-- Products Section -->
   <section class="products">
-    <h2>What We Offer</h2>
+    <h2>Explore Our Range</h2>
     <div class="products-grid">
+
       <div class="product-card">
-        <img src="images/cement.jpg" alt="Cement">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2021/7/QB/RD/BR/7593896/ultratech-cement.jpg" alt="Cement Bags">
         <h3>Cement</h3>
       </div>
+
       <div class="product-card">
-        <img src="images/steel.jpg" alt="Steel Rods">
+        <img src="https://m.media-amazon.com/images/I/81B6h3JoCzL._AC_UF894,1000_QL80_.jpg" alt="Steel Rods">
         <h3>Steel Rods</h3>
       </div>
+
       <div class="product-card">
-        <img src="images/bricks.jpg" alt="Bricks">
-        <h3>Bricks</h3>
+        <img src="https://5.imimg.com/data5/SELLER/Default/2022/12/KJ/WP/AB/164580219/ceramic-floor-tiles.jpg" alt="Floor Tiles">
+        <h3>Tiles</h3>
       </div>
+
       <div class="product-card">
-        <img src="images/paint.jpg" alt="Paint">
-        <h3>Paint</h3>
+        <img src="https://www.dulux.com.au/sites/dulux/files/styles/320x320/public/dnz_27500_image1.jpg" alt="Paint Cans">
+        <h3>Paints</h3>
       </div>
-      <div class="product-card">
-        <img src="images/tools.jpg" alt="Tools">
-        <h3>Tools</h3>
-      </div>
-      <div class="product-card">
-        <img src="images/pipes.jpg" alt="Pipes">
-        <h3>Pipes</h3>
-      </div>
+
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Great North Hardware & Steel Ltd. All Rights Reserved.</p>
   </footer>
 
-  <!-- JavaScript for Mobile Menu -->
   <script>
     const menuToggle = document.getElementById("menu-toggle");
     const navMenu = document.getElementById("nav-menu");
     const closeBtn = document.getElementById("close-btn");
-
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.add("active");
-    });
-
-    closeBtn.addEventListener("click", () => {
-      navMenu.classList.remove("active");
-    });
+    menuToggle.addEventListener("click", () => { navMenu.classList.add("active"); });
+    closeBtn.addEventListener("click", () => { navMenu.classList.remove("active"); });
   </script>
 </body>
 </html>

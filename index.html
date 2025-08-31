@@ -45,11 +45,19 @@
 </footer>
 <script>
   function toggleMenu() {
-    document.getElementById("navbar").classList.toggle("show");
+    const nav = document.getElementById("navbar");
+    nav.classList.toggle("show");
+  }
+
+  function closeMenu() {
+    const nav = document.getElementById("navbar");
+    nav.classList.remove("show");
   }
 </script>
+
 </body>
 </html>
+
 
 
 

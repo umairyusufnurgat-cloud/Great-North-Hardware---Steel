@@ -1,4 +1,4 @@
-/* ====== Reset & Base ====== */
+/* ====== Reset & Base ====== */ 
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +17,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #222;
+  background: #333;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,15 +25,16 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-header h1 {
+header .logo {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-/* Nav (desktop) */
+/* Desktop nav */
 nav {
   display: flex;
-  gap: 15px;
+  gap: 20px;
 }
 
 nav a {
@@ -47,533 +48,21 @@ nav a:hover {
   color: #f39c12;
 }
 
-/* Hamburger (hidden by default on desktop) */
-.hamburger {
-  display: none;
-  font-size: 26px;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* ====== Mobile Styles ====== */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #222;
-    padding: 20px;
-    text-align: center;
-  }
-
-  nav.show {
-    display: flex;
-  }
-
-  nav a {
-    color: #fff;
-    font-size: 18px;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-
-  nav a:last-child {
-    border-bottom: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .close-btn {
-    align-self: flex-end;
-    font-size: 24px;
-    color: #fff;
-    cursor: pointer;
-    margin-bottom: 15px;
-  }
-}
-/* ====== Banner Section ====== */
-.page-banner {
-  height: 250px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 28px;
-  font-weight: bold;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-}
-
-/* ====== Content Section ====== */
-.content {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.content h2, .content h3 {
-  margin-bottom: 20px;
-  color: #222;
-}
-
-.content p, .content ul {
-  margin-bottom: 20px;
-  font-size: 18px;
-}
-
-.content ul li {
-  margin-bottom: 10px;
-}
-
-/* ====== Gallery Section ====== */
-.gallery {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: auto;
-  text-align: center;
-}
-
-.gallery h3 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #222;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.05);
-}
-
-/* ====== Footer ====== */
-footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  font-size: 14px;
-}
-/* Page Banner */
-.page-banner {
-  height: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-}
-.page-banner h2 {
-  font-size: 2.5rem;
-  background: rgba(0,0,0,0.5);
-  padding: 10px 20px;
-  border-radius: 8px;
-}
-
-/* Content Section */
-.content {
-  max-width: 900px;
-  margin: 40px auto;
-  text-align: center;
-}
-.content h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-.content p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #444;
-}
-
-/* Values Section */
-.values {
-  background: #f8f8f8;
-  padding: 50px 20px;
-  text-align: center;
-}
-.values h2 {
-  margin-bottom: 30px;
-  font-size: 2rem;
-}
-.values-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-.value-box {
-  background: white;
-  padding: 20px;
-  width: 250px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
-.value-box:hover {
-  transform: translateY(-5px);
-}
-.value-box img {
-  width: 80px;
-  margin-bottom: 15px;
-}
-.value-box h3 {
-  margin-bottom: 10px;
-  color: #222;
-}
-
-/* Team Section */
-.team {
-  max-width: 900px;
-  margin: 60px auto;
-  text-align: center;
-}
-.team h2 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-}
-.team p {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-  color: #444;
-}
-.team img {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-/* Products Page */
-.products {
-  padding: 50px 20px;
-  background: #fafafa;
-  text-align: center;
-}
-.products h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.product-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-.product-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-.product-info {
-  padding: 20px;
-}
-.product-info h3 {
-  margin-bottom: 10px;
-  font-size: 1.3rem;
-  color: #222;
-}
-.product-info p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 15px;
-}
-.product-info a {
-  display: inline-block;
-  padding: 10px 18px;
-  background: steelblue;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background 0.2s ease;
-}
-.product-info a:hover {
-  background: #1f4d7a;
-}
-/* Contact Page */
-.contact {
-  padding: 50px 20px;
-  max-width: 1200px;
-  margin: auto;
-  text-align: center;
-}
-
-.contact h2 {
-  font-size: 2.2em;
-  margin-bottom: 10px;
-  color: #2c3e50;
-}
-
-.contact p {
-  font-size: 1.1em;
-  margin-bottom: 40px;
-  color: #555;
-}
-
-.contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-/* Contact Form */
-.contact-form {
-  flex: 1 1 400px;
-  background: #f8f9fa;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form label {
-  text-align: left;
-  margin: 10px 0 5px;
-  font-weight: bold;
-  color: #333;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1em;
-  margin-bottom: 15px;
-  width: 100%;
-}
-
-.contact-form button {
-  background: #27ae60;
-  color: #fff;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.contact-form button:hover {
-  background: #219150;
-}
-
-/* Contact Info */
-.contact-info {
-  flex: 1 1 400px;
-  background: #fdfdfd;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: left;
-}
-
-.contact-info h3 {
-  margin-bottom: 15px;
-  font-size: 1.6em;
-  color: #2c3e50;
-}
-
-.contact-info p {
-  margin-bottom: 10px;
-  font-size: 1.05em;
-}
-
-.contact-info strong {
-  color: #27ae60;
-}
-
-.map {
-  margin-top: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  header nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .gallery-grid {
-    grid-template-columns: 1fr; /* one image per row on small screens */
-  }
-
-  .page-banner h2 {
-    font-size: 1.5rem; /* smaller heading for mobile */
-  }
-}
-.scroll-down {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 2rem;
-  color: #333;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(8px); }
-  60% { transform: translateY(4px); }
-}
-/* Sticky nav */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Nav links */
-nav {
-  display: flex;
-  gap: 15px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #0077cc;
-}
-
-/* Hamburger (hidden by default on desktop) */
-.hamburger {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* Mobile view */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #222;
-    padding: 20px;
-    text-align: center;
-  }
-
-  nav.show {
-    display: flex;
-  }
-
-  nav a {
-    color: #fff;
-    font-size: 18px;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-
-  nav a:last-child {
-    border-bottom: none;
-  }
-
-  .hamburger {
-    display: block;
-    font-size: 26px;
-    cursor: pointer;
-  }
-
-  /* Close button inside nav */
-  .close-btn {
-    align-self: flex-end;
-    font-size: 24px;
-    color: #fff;
-    cursor: pointer;
-    margin-bottom: 10px;
-  }
-}
-/* Header styles */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background: #333;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-header .logo {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-header nav {
-  display: flex;
-  gap: 20px;
-}
-
-header nav a {
-  color: white;
-  text-decoration: none;
-}
-
+/* ====== Mobile Nav ====== */
 .menu-toggle {
   display: none;
   background: none;
   border: none;
   color: white;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
-/* Mobile nav */
+.close-btn {
+  display: none; /* hidden on desktop */
+}
+
+/* Mobile layout */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -597,14 +86,17 @@ header nav a {
   }
 
   nav .close-btn {
+    display: block;
     align-self: flex-end;
     background: none;
     border: none;
     color: white;
     font-size: 1.5rem;
     margin-bottom: 20px;
+    cursor: pointer;
   }
-}
 
-
-
+  nav a {
+    color: #fff;
+    font-size: 18px;
+    border-

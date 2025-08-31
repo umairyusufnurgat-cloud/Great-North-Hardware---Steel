@@ -9,16 +9,20 @@
 <body>
 <header>
   <h1>Great North Hardware & Steel Ltd</h1>
+
+  <!-- Hamburger (only visible on mobile) -->
+  <div class="hamburger">&#9776;</div>
+
+  <!-- Navigation -->
   <nav id="navbar">
-    <div class="close-btn" onclick="closeMenu()">&times;</div>
-    <a href="index.html" onclick="closeMenu()">Home</a>
-    <a href="about.html" onclick="closeMenu()">About</a>
-    <a href="products.html" onclick="closeMenu()">Products</a>
-    <a href="contact.html" onclick="closeMenu()">Contact</a>
+    <!-- Close button (only visible on mobile when menu is open) -->
+    <div class="close-btn">&times;</div>
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
   </nav>
-  <div class="hamburger" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </div>
 </header>
 
 <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1601046593657-dc07f3b4db92?auto=format&fit=crop&w=1350&q=80');">
@@ -113,6 +117,7 @@
 
 </body>
 </html>
+
 
 
 

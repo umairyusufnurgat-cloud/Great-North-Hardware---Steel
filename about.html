@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - Great North Hardware & Steel Ltd</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -23,7 +24,6 @@
   </nav>
 </header>
 
-
 <section class="page-banner" style="background-image: url('https://images.unsplash.com/photo-1601046593657-dc07f3b4db92?auto=format&fit=crop&w=1350&q=80');">
   <h2>About Us</h2>
 </section>
@@ -35,9 +35,11 @@
     Our mission is to support builders, craftsmen, and homeowners by providing reliable products and expert advice.
   </p>
 </section>
+
 <div class="scroll-down">
   <i class="fas fa-chevron-down"></i>
 </div>
+
 <section class="values">
   <h2>Our Mission & Values</h2>
   <div class="values-grid">
@@ -68,30 +70,25 @@
 <footer>
   <p>&copy; 2025 Great North Hardware & Steel Ltd. All Rights Reserved.</p>
 </footer>
+
+<!-- ✅ FIXED SCRIPT -->
 <script>
-  const menuToggle = document.getElementById("menu-toggle");
-  const navMenu = document.getElementById("nav-menu");
-  const closeBtn = document.getElementById("close-btn");
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+    const closeBtn = document.getElementById("close-btn");
 
-  menuToggle.addEventListener("click", () => {
-    navMenu.classList.add("active");
-  });
+    if (menuToggle && navMenu && closeBtn) {
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.add("active");
+      });
 
-  closeBtn.addEventListener("click", () => {
-    navMenu.classList.remove("active");
+      closeBtn.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+      });
+    }
   });
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

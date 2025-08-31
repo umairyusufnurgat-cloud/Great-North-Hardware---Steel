@@ -10,22 +10,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
- <header>
+<header>
   <h1>Great North Hardware & Steel Ltd</h1>
+
+  <!-- Hamburger (only visible on mobile) -->
+  <div class="hamburger">&#9776;</div>
+
+  <!-- Navigation -->
   <nav id="navbar">
-    <div class="close-btn" onclick="closeMenu()">&times;</div>
-    <a href="index.html" onclick="closeMenu()">Home</a>
-    <a href="about.html" onclick="closeMenu()">About</a>
-    <a href="products.html" onclick="closeMenu()">Products</a>
-    <a href="contact.html" onclick="closeMenu()">Contact</a>
+    <!-- Close button (only visible on mobile when menu is open) -->
+    <div class="close-btn">&times;</div>
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
   </nav>
-  <div class="hamburger" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </div>
 </header>
-
-
   <main>
     <section class="contact">
       <h2>Contact Us</h2>
@@ -121,6 +122,7 @@
 
 </body>
 </html>
+
 
 
 

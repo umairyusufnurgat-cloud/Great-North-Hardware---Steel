@@ -1,6 +1,4 @@
-/* =======================
-   General Reset & Base
-======================= */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -10,39 +8,29 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  background: #f4f4f4;
   color: #333;
-  background: #f9f9f9;
 }
 
-h1, h2, h3 {
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* =======================
-   Header & Navigation
-======================= */
+/* Header */
 header {
-  background: #222;
-  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #222;
+  color: #fff;
   padding: 15px 20px;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
-  font-size: 1.3rem;
+  font-size: 18px;
   font-weight: bold;
 }
 
-/* Desktop nav */
+/* Navigation - Desktop */
 nav {
   display: flex;
   gap: 20px;
@@ -50,101 +38,130 @@ nav {
 
 nav a {
   color: #fff;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #ff9800;
+  color: #ffcc00;
 }
 
-/* Mobile menu toggle (hamburger) */
+nav .close-btn {
+  display: none;
+}
+
 .menu-toggle {
+  display: none;
+  font-size: 24px;
   background: none;
   border: none;
-  font-size: 1.5rem;
-  color: #fff;
   cursor: pointer;
-  display: none; /* hidden by default */
+  color: white;
 }
 
-/* Mobile nav menu */
-#nav-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 70%;
-  height: 100%;
-  background: #333;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 60px 20px;
-  gap: 20px;
-  transition: right 0.3s ease;
-  z-index: 1000;
+/* Mobile Nav */
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 70%;
+    background: #222;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav a {
+    display: block;
+    margin: 15px 0;
+    font-size: 18px;
+    color: white;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav .close-btn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
 }
 
-#nav-menu.active {
-  right: 0;
-}
-
-#nav-menu a {
-  color: #fff;
-  font-size: 1.1rem;
-  width: 100%;
-}
-
-.close-btn {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: #fff;
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  cursor: pointer;
-}
-
-/* =======================
-   Banner Sections
-======================= */
+/* Banner */
 .page-banner {
   background-size: cover;
   background-position: center;
-  padding: 80px 20px;
-  color: #fff;
+  color: white;
   text-align: center;
+  padding: 80px 20px;
 }
 
 .page-banner h2 {
-  font-size: 2.5rem;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  font-size: 32px;
+  background: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
-/* =======================
-   Products Grid
-======================= */
-.products {
-  padding: 40px 20px;
+/* Content */
+.content {
+  padding: 20px;
   text-align: center;
 }
 
-.products h2 {
-  margin-bottom: 30px;
-  font-size: 2rem;
-  color: #222;
+/* Gallery */
+.gallery {
+  padding: 20px;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* Products */
+.products {
+  padding: 20px;
+  text-align: center;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
 
 .product-card {
   background: #fff;
   border-radius: 8px;
-  overflow: hidden;
+  padding: 15px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
 }
@@ -155,110 +172,43 @@ nav a:hover {
 
 .product-card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.product-info {
-  padding: 15px;
-  text-align: left;
+  height: 200px;
+  object-fit: contain; /* Keeps image proportions */
+  border-radius: 5px;
 }
 
 .product-info h3 {
-  margin-bottom: 10px;
+  margin: 10px 0;
+  font-size: 20px;
 }
 
 .product-info p {
-  font-size: 0.95rem;
+  font-size: 14px;
+  color: #555;
   margin-bottom: 10px;
 }
 
 .product-info a {
   display: inline-block;
   padding: 8px 12px;
-  background: #ff9800;
+  background: #222;
   color: #fff;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  transition: background 0.3s ease;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
 .product-info a:hover {
-  background: #e68900;
+  background: #ffcc00;
+  color: #222;
 }
 
-/* =======================
-   About / Contact Content
-======================= */
-.content {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.content ul {
-  margin: 15px 0;
-  padding-left: 20px;
-}
-
-.content ul li {
-  margin-bottom: 8px;
-  list-style: disc;
-}
-
-/* Contact Form */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.contact-form button {
-  padding: 10px;
-  background: #ff9800;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.contact-form button:hover {
-  background: #e68900;
-}
-
-/* =======================
-   Footer
-======================= */
+/* Footer */
 footer {
-  background: #222;
-  color: #fff;
   text-align: center;
   padding: 15px;
-  margin-top: 40px;
-  font-size: 0.9rem;
-}
-
-/* =======================
-   Responsive Styles
-======================= */
-@media (max-width: 768px) {
-  nav {
-    display: none; /* hide desktop nav */
-  }
-
-  .menu-toggle {
-    display: block; /* show hamburger */
-  }
+  background: #222;
+  color: #fff;
+  margin-top: 20px;
+  font-size: 14px;
 }

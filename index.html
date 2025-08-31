@@ -44,19 +44,55 @@
   <p>&copy; 2025 Great North Hardware & Steel Ltd. All Rights Reserved.</p>
 </footer>
 <script>
-  function toggleMenu() {
-    const nav = document.getElementById("navbar");
-    nav.classList.toggle("show");
+(() => {
+  // helpers
+  const $ = (s) => document.querySelector(s);
+
+  const nav       = $('#navbar');
+  const hamburger = document.querySelector('.hamburger');        // the ☰ button
+  const closeBtn  = document.querySelector('#navbar .close-btn'); // the X inside the nav
+
+  function openMenu()  { nav?.classList.add('show');  document.body.classList.add('nav-open'); }
+  function closeMenu() { nav?.classList.remove('show');document.body.classList.remove('nav-open'); }
+  function toggleMenu(){ nav?.classList.toggle('show');document.body.classList.toggle('nav-open'); }
+
+  function bind() {
+    if (!nav || !hamburger) {
+      console.warn('Navbar or hamburger not found. Check IDs/classes.');
+      return;
+    }
+
+    // Open/close via buttons
+    hamburger.addEventListener('click', toggleMenu);
+
+    // Force the X to CLOSE (overrides any inline onclick="toggleMenu()")
+    if (closeBtn) closeBtn.onclick = closeMenu;
+
+    // Close when a nav link is tapped
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+    // Close on ESC
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+    // Optional: tap outside to close
+    document.addEventListener('click', (e) => {
+      if (!nav.classList.contains('show')) return;
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+    });
   }
 
-  function closeMenu() {
-    const nav = document.getElementById("navbar");
-    nav.classList.remove("show");
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bind);
+  } else {
+    bind();
   }
+})();
 </script>
+
 
 </body>
 </html>
+
 
 
 

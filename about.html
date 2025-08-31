@@ -1,61 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Us - Great North Hardware & Steel Ltd</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<header>
-  <div class="logo">Great North Hardware & Steel Ltd</div>
-
-  <!-- Mobile menu toggle -->
-  <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">
-    <i class="fas fa-bars"></i>
-  </button>
-
-  <!-- Nav menu -->
-  <nav id="nav-menu">
-    <button class="close-btn" id="close-btn" aria-label="Close Menu">
-      <i class="fas fa-times"></i>
+  <header>
+    <div class="logo">Great North Hardware & Steel Ltd</div>
+    <button class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
     </button>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="products.html">Products</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+    <nav id="nav-menu">
+      <button class="close-btn" id="close-btn">
+        <i class="fas fa-times"></i>
+      </button>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<!-- About Content -->
-<section class="page-banner" style="background-image: url('images/about-bg.jpg');">
-  <h2>About Us</h2>
-</section>
+  <!-- Banner section -->
+  <section class="page-banner" style="background-image: url('images/storefront.webp');">
+    <h2>About Us</h2>
+  </section>
 
-<section class="content">
-  <h2>Who We Are</h2>
-  <p>Great North Hardware & Steel Ltd is a trusted supplier of hardware, construction materials, and steel products. 
-  With years of experience, we pride ourselves on providing reliable products and excellent customer service.</p>
+  <main>
+    <section class="about">
+      <p>
+        Great North Hardware & Steel Ltd is your trusted partner in building, construction, and home improvement.
+        Based in Chibombo, Zambia, we provide a wide range of high-quality hardware, steel, and construction materials
+        to meet the needs of contractors, businesses, and individuals alike.
+      </p>
 
-  <h2>Our Mission</h2>
-  <p>To supply top-quality materials at affordable prices while maintaining strong relationships with our clients and partners.</p>
+      <div class="about-container">
+        <div class="about-box">
+          <i class="fas fa-industry fa-3x"></i>
+          <h3>Our Mission</h3>
+          <p>
+            To deliver reliable and affordable hardware and steel products, ensuring our customers get
+            the strength and durability they need for every project.
+          </p>
+        </div>
 
-  <h2>Why Choose Us</h2>
-  <ul>
-    <li>Wide range of products</li>
-    <li>Quality assurance</li>
-    <li>Affordable pricing</li>
-    <li>Customer-focused service</li>
-  </ul>
-</section>
+        <div class="about-box">
+          <i class="fas fa-handshake fa-3x"></i>
+          <h3>Our Values</h3>
+          <p>
+            We believe in integrity, customer satisfaction, and building strong relationships
+            with our community and partners.
+          </p>
+        </div>
 
-<footer>
-  <p>&copy; 2025 Great North Hardware & Steel Ltd. All Rights Reserved.</p>
-</footer>
+        <div class="about-box">
+          <i class="fas fa-users fa-3x"></i>
+          <h3>Our Team</h3>
+          <p>
+            Our experienced and dedicated team is always ready to provide expert advice and support
+            to help you choose the right materials for your projects.
+          </p>
+        </div>
+      </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
+      <!-- Team Image below Our Team -->
+      <div class="team-image">
+        <img src="images/team.webp" alt="Our Team at Great North Hardware" style="max-width:100%; border-radius:10px; margin-top:20px;">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Great North Hardware & Steel Ltd. All rights reserved.</p>
+  </footer>
+
+  <script>
     const menuToggle = document.getElementById("menu-toggle");
     const navMenu = document.getElementById("nav-menu");
     const closeBtn = document.getElementById("close-btn");
@@ -67,13 +90,6 @@
     closeBtn.addEventListener("click", () => {
       navMenu.classList.remove("active");
     });
-
-    document.addEventListener("click", (e) => {
-      if (navMenu.classList.contains("active") && !navMenu.contains(e.target) && e.target !== menuToggle) {
-        navMenu.classList.remove("active");
-      }
-    });
-  });
-</script>
+  </script>
 </body>
 </html>

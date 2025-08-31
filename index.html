@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Great North Hardware & Steel Ltd</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
   <div class="logo">Great North Hardware & Steel Ltd</div>
-  <button class="menu-toggle" id="menu-toggle">
+
+  <!-- Mobile menu toggle -->
+  <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">
     <i class="fas fa-bars"></i>
   </button>
+
+  <!-- Nav menu -->
   <nav id="nav-menu">
-    <button class="close-btn" id="close-btn">
+    <button class="close-btn" id="close-btn" aria-label="Close Menu">
       <i class="fas fa-times"></i>
     </button>
     <a href="index.html">Home</a>
@@ -44,32 +49,30 @@
 <footer>
   <p>&copy; 2025 Great North Hardware & Steel Ltd. All Rights Reserved.</p>
 </footer>
+
 <script>
-  const menuToggle = document.getElementById("menu-toggle");
-  const navMenu = document.getElementById("nav-menu");
-  const closeBtn = document.getElementById("close-btn");
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+    const closeBtn = document.getElementById("close-btn");
 
-  menuToggle.addEventListener("click", () => {
-    navMenu.classList.add("active");
-  });
+    // Open menu
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.add("active");
+    });
 
-  closeBtn.addEventListener("click", () => {
-    navMenu.classList.remove("active");
+    // Close menu
+    closeBtn.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+    });
+
+    // Close when clicking outside nav
+    document.addEventListener("click", (e) => {
+      if (navMenu.classList.contains("active") && !navMenu.contains(e.target) && e.target !== menuToggle) {
+        navMenu.classList.remove("active");
+      }
+    });
   });
 </script>
-
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

@@ -402,4 +402,11 @@ footer {
   60% { transform: translateY(4px); }
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff; /* keep it visible */
+}
+
 

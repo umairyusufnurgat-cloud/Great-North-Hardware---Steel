@@ -160,19 +160,6 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   }
 }
 
-  @media (prefers-color-scheme: dark) {
-    nav#nav-menu { background: rgba(15,20,27,.98); }
-  }
-  nav#nav-menu.active { transform: translateX(0); }
-  nav#nav-menu a { background: rgba(0,0,0,.04); color: inherit; }
-  nav#nav-menu a:hover { background: rgba(0,0,0,.08); }
-
-  .close-btn {
-    position: absolute; top: 1rem; right: 1rem; 
-    background: rgba(0,0,0,.06);
-  }
-}
-
 /* Desktop layout refinement */
 @media (min-width: 901px) {
   .menu-toggle, .close-btn { display: none; }
@@ -397,6 +384,7 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 
 
 

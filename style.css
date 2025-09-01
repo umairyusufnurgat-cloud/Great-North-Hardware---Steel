@@ -72,14 +72,19 @@ nav a:hover {
 
 /* Responsive Navigation */
 @media (max-width: 768px) {
+  .menu-toggle {
+    position: relative;
+    z-index: 1100;
+  }
+
   .nav-menu {
     display: none;
     flex-direction: column;
     background-color: #333;
     position: absolute;
     top: 60px;
-    right: 0;
-    margin-right: 20px;  /* pushes menu 20px to the left */
+    left: 0;  /* start from left of the toggle */
+    transform: translateX(-20%); /* adjust until it looks right */
     width: 200px;
     z-index: 1000;
   }
@@ -412,6 +417,7 @@ footer {
     display: block;
   }
 }
+
 
 
 

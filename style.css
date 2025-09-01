@@ -352,5 +352,40 @@ footer {
     height: 160px;
   }
 }
+/* Hide hamburger menu on larger screens */
+.menu-toggle {
+  display: none; /* hidden by default */
+}
+
+/* Show hamburger only on small screens */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px; /* spacing from edge */
+  }
+
+  nav {
+    display: none; /* hidden menu */
+    flex-direction: column;
+    background: #333;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+  }
+}
+
 
 

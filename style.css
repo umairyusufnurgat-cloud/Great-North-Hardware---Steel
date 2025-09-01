@@ -140,37 +140,33 @@ nav#nav-menu a:hover { background: var(--brand-50); color: var(--brand-700); }
 nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(--shadow-sm); }
 
 /* Mobile toggle */
-/* Mobile toggle */
 .menu-toggle { 
-  background: none; 
+  background: transparent; 
   border: none; 
   cursor: pointer; 
-  padding: 0; 
-  margin: 12px auto 8px; /* Center horizontally and add vertical margin */
+  padding: 12px; 
+  margin: 8px auto; /* Center horizontally and add vertical margin */
   color: var(--brand-700);
   font-size: 1.5rem;
   z-index: 60;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px; /* Set explicit width */
-  height: 20px; /* Set explicit height */
 }
 
 .close-btn { 
-  background: none; 
+  background: transparent; 
   border: none; 
   cursor: pointer; 
-  padding: 0;
+  padding: 12px;
   color: var(--brand-700);
   font-size: 1.5rem;
   display: none;
-  width: 30px; /* Set explicit width */
-  height: 30px; /* Set explicit height */
 }
 
+/* Remove hover effects */
 .menu-toggle:hover, .close-btn:hover { 
-  opacity: 0.8; /* Simple opacity change on hover */
+  background: transparent; 
 }
 
 /* Header layout changes */
@@ -213,11 +209,12 @@ header .logo {
   }
   
   /* Position the close button inside the menu */
-  nav#nav-menu .close-btn {
-    display: none;
-    align-self: flex-end; /* Align to the right */
-    margin-bottom: 16px; /* Add space below */
-  }
+nav#nav-menu .close-btn {
+  display: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
   
   /* Show close button when menu is active */
   nav#nav-menu.active .close-btn {
@@ -500,6 +497,7 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 
 
 

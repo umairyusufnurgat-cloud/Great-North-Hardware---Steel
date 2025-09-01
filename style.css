@@ -78,7 +78,7 @@ nav a:hover {
     background-color: #333;
     position: absolute;
     top: 60px;
-    right: 10px;   /* was 0, move left by 10px */
+    right: 20px;   /* was 0, move left by 10px */
     width: 200px;
     z-index: 1000;
   }
@@ -410,6 +410,7 @@ footer {
     display: block;
   }
 }
+
 
 
 

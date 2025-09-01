@@ -127,72 +127,104 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
 
 /* Mobile toggle */
 .menu-toggle { 
-  background: transparent; border: 0; cursor: pointer; 
-  padding: .75rem; margin-right: .25rem; 
+  background: transparent; 
+  border: 0; 
+  cursor: pointer; 
+  padding: .75rem; 
+  margin-right: .25rem; 
   border-radius: .75rem; 
   color: var(--brand-700);
   font-size: 1.5rem;
-  z-index: 60;
+  z-index: 100; /* Higher z-index */
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 44px; /* Explicit width */
+  height: 44px; /* Explicit height */
+  position: relative; /* Ensure positioning context */
 }
 
 .close-btn { 
-  background: transparent; border: 0; cursor: pointer; 
+  background: transparent; 
+  border: 0; 
+  cursor: pointer; 
   padding: .75rem;
   border-radius: .75rem; 
   color: var(--brand-700);
   font-size: 1.5rem;
-  z-index: 61; /* Higher than menu-toggle */
+  z-index: 101; /* Higher than menu-toggle */
   position: absolute;
   top: 1rem;
   right: 1rem;
-  visibility: hidden; /* Use visibility instead of display */
+  width: 44px; /* Explicit width */
+  height: 44px; /* Explicit height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0; /* Start fully transparent */
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  visibility: hidden; /* Start hidden */
+  transform: scale(0.8); /* Start slightly smaller */
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 }
 
-.menu-toggle:hover, .close-btn:hover { background: rgba(0,0,0,.06); }
+.menu-toggle:hover, .close-btn:hover { 
+  background: rgba(0,0,0,.06); 
+}
 
 /* Off-canvas on small screens */
 @media (max-width: 900px) {
-  header { grid-template-columns: 1fr auto; }
+  header { 
+    grid-template-columns: 1fr auto;
+    position: relative; /* Ensure positioning context */
+  }
+  
   nav#nav-menu {
-    position: fixed; inset: 0 0 0 70%; /* right 30% panel */
+    position: fixed; 
+    inset: 0 0 0 70%; /* right 30% panel */
     background: rgba(255,255,255,.98);
     transform: translateX(100%);
     transition: transform .35s cubic-bezier(.2,.8,.2,1);
-    flex-direction: column; padding: 6rem 1.25rem 2rem; 
-    align-items: stretch; gap: .5rem; 
+    flex-direction: column; 
+    padding: 6rem 1.25rem 2rem; 
+    align-items: stretch; 
+    gap: .5rem; 
     box-shadow: var(--shadow-lg);
-    z-index: 55;
+    z-index: 99; /* Below buttons but above other content */
   }
   
   /* Show close button only when menu is active */
   nav#nav-menu.active .close-btn {
-    visibility: visible;
     opacity: 1;
+    visibility: visible;
+    transform: scale(1);
   }
   
   /* Hide menu toggle when menu is active */
   body.menu-active .menu-toggle {
-    visibility: hidden;
     opacity: 0;
-    position: absolute; /* Take it out of flow */
+    visibility: hidden;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   }
   
   @media (prefers-color-scheme: dark) {
     nav#nav-menu { background: rgba(15,20,27,.98); }
   }
-  nav#nav-menu.active { transform: translateX(0); }
+  
+  nav#nav-menu.active { 
+    transform: translateX(0); 
+  }
+  
   nav#nav-menu a { 
     background: rgba(0,0,0,.04); 
     color: inherit; 
     padding: 1rem;
     border-radius: .75rem;
   }
-  nav#nav-menu a:hover { background: rgba(0,0,0,.08); }
+  
+  nav#nav-menu a:hover { 
+    background: rgba(0,0,0,.08); 
+  }
 }
 
 /* Desktop layout refinement */
@@ -419,6 +451,7 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 
 
 

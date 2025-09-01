@@ -131,10 +131,9 @@ nav#nav-menu a:hover { background: var(--brand-50); color: var(--brand-700); }
 nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(--shadow-sm); }
 
 /* Mobile toggle */
-/* Mobile toggle */
 .menu-toggle { 
-  background: transparent; 
-  border: none; 
+  background: transparent !important; 
+  border: none !important; 
   cursor: pointer; 
   padding: 12px; 
   margin: 8px auto; /* Center horizontally and add vertical margin */
@@ -144,26 +143,44 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   display: flex;
   align-items: center;
   justify-content: center;
-  outline: none; /* Remove the default focus outline */
-  -webkit-tap-highlight-color: transparent; /* Remove the blue highlight on mobile devices */
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-focus-ring-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.menu-toggle:focus, .menu-toggle:active, .menu-toggle:hover {
+  background: transparent !important;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-focus-ring-color: transparent !important;
+  box-shadow: none !important;
 }
 
 .close-btn { 
-  background: transparent; 
-  border: none; 
+  background: transparent !important; 
+  border: none !important; 
   cursor: pointer; 
   padding: 12px;
   color: var(--brand-700);
   font-size: 1.5rem;
   display: none;
-  outline: none; /* Remove the default focus outline */
-  -webkit-tap-highlight-color: transparent; /* Remove the blue highlight on mobile devices */
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-focus-ring-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 
-/* Remove hover effects */
-.menu-toggle:hover, .close-btn:hover { 
-  background: transparent; 
+.close-btn:focus, .close-btn:active, .close-btn:hover {
+  background: transparent !important;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-focus-ring-color: transparent !important;
+  box-shadow: none !important;
 }
+
 
 
 /* Header layout changes */
@@ -494,6 +511,7 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 
 
 

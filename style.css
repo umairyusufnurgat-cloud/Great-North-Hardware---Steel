@@ -135,20 +135,10 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   border-radius: 8px; 
   color: var(--brand-700);
   font-size: 1.5rem;
-  z-index: 100;
+  z-index: 60;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  /* Ensure the entire button is clickable */
-  width: 44px;
-  height: 44px;
-}
-
-/* Remove any potential pseudo-elements that might be blocking clicks */
-.menu-toggle::before,
-.menu-toggle::after {
-  display: none;
 }
 
 .close-btn { 
@@ -159,14 +149,11 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   border-radius: 8px; 
   color: var(--brand-700);
   font-size: 1.5rem;
-  z-index: 101;
+  z-index: 61;
   position: absolute;
   top: 16px;
-  right: 16px;
+  left: 16px; /* Changed from right to left */
   display: none;
-  /* Ensure the entire button is clickable */
-  width: 44px;
-  height: 44px;
 }
 
 .menu-toggle:hover, .close-btn:hover { 
@@ -223,11 +210,14 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
     background: rgba(0,0,0,.08); 
   }
   
-  /* Add a temporary visual indicator to see the clickable area */
-  .menu-toggle {
-    outline: 1px dashed rgba(255, 0, 0, 0.5); /* Red dashed outline for testing */
+  /* Add some space at the top of the menu for the close button */
+  nav#nav-menu::before {
+    content: '';
+    display: block;
+    height: 60px;
   }
 }
+
 
 /* Desktop layout refinement */
 @media (min-width: 901px) {
@@ -453,6 +443,7 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 
 
 

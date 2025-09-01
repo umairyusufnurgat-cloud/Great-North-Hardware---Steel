@@ -130,29 +130,31 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   background: transparent; 
   border: 0; 
   cursor: pointer; 
-  padding: .75rem; 
-  margin-right: .25rem; 
-  border-radius: .75rem; 
+  padding: 0; 
+  margin: 0;
   color: var(--brand-700);
   font-size: 1.5rem;
-  z-index: 100; /* Higher z-index */
+  z-index: 1000; /* Very high z-index */
   display: flex;
   align-items: center;
   justify-content: center;
   width: 44px; /* Explicit width */
   height: 44px; /* Explicit height */
   position: relative; /* Ensure positioning context */
+  /* Make sure it's above everything */
+  pointer-events: auto;
 }
 
 .close-btn { 
   background: transparent; 
   border: 0; 
   cursor: pointer; 
-  padding: .75rem;
-  border-radius: .75rem; 
+  padding: 0;
+  margin: 0;
+  border-radius: 0; 
   color: var(--brand-700);
   font-size: 1.5rem;
-  z-index: 101; /* Higher than menu-toggle */
+  z-index: 1001; /* Even higher z-index */
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -165,6 +167,7 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   visibility: hidden; /* Start hidden */
   transform: scale(0.8); /* Start slightly smaller */
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* Disable pointer events when hidden */
 }
 
 .menu-toggle:hover, .close-btn:hover { 
@@ -176,6 +179,7 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   header { 
     grid-template-columns: 1fr auto;
     position: relative; /* Ensure positioning context */
+    z-index: 999; /* High z-index for header */
   }
   
   nav#nav-menu {
@@ -189,7 +193,7 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
     align-items: stretch; 
     gap: .5rem; 
     box-shadow: var(--shadow-lg);
-    z-index: 99; /* Below buttons but above other content */
+    z-index: 998; /* Below buttons but above other content */
   }
   
   /* Show close button only when menu is active */
@@ -197,6 +201,7 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
     opacity: 1;
     visibility: visible;
     transform: scale(1);
+    pointer-events: auto; /* Enable pointer events when visible */
   }
   
   /* Hide menu toggle when menu is active */
@@ -205,6 +210,7 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
     visibility: hidden;
     transform: scale(0.8);
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* Disable pointer events when hidden */
   }
   
   @media (prefers-color-scheme: dark) {
@@ -225,7 +231,21 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   nav#nav-menu a:hover { 
     background: rgba(0,0,0,.08); 
   }
+  
+  /* Add a visual indicator for the clickable area during development */
+  .menu-toggle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px dashed rgba(14, 122, 131, 0.3); /* Visual indicator */
+    border-radius: 50%; /* Circular indicator */
+    pointer-events: none; /* Don't interfere with clicks */
+  }
 }
+
 
 /* Desktop layout refinement */
 @media (min-width: 901px) {
@@ -451,6 +471,7 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 
 
 

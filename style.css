@@ -122,6 +122,9 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   background: transparent; border: 0; cursor: pointer; 
   padding: .75rem; margin-right: .25rem; 
   border-radius: .75rem; 
+  color: var(--brand-700);
+  font-size: 1.5rem;
+  z-index: 60;
 }
 .menu-toggle:hover, .close-btn:hover { background: rgba(0,0,0,.06); }
 
@@ -129,14 +132,34 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
 @media (max-width: 900px) {
   header { grid-template-columns: 1fr auto; }
   nav#nav-menu {
-    position: fixed; inset: 0 0 0 30%; /* right 70% panel */
+    position: fixed; inset: 0 0 0 70%; /* right 30% panel */
     background: rgba(255,255,255,.98);
     transform: translateX(100%);
     transition: transform .35s cubic-bezier(.2,.8,.2,1);
     flex-direction: column; padding: 6rem 1.25rem 2rem; 
     align-items: stretch; gap: .5rem; 
     box-shadow: var(--shadow-lg);
+    z-index: 55;
   }
+  @media (prefers-color-scheme: dark) {
+    nav#nav-menu { background: rgba(15,20,27,.98); }
+  }
+  nav#nav-menu.active { transform: translateX(0); }
+  nav#nav-menu a { 
+    background: rgba(0,0,0,.04); 
+    color: inherit; 
+    padding: 1rem;
+    border-radius: .75rem;
+  }
+  nav#nav-menu a:hover { background: rgba(0,0,0,.08); }
+
+  .close-btn {
+    position: absolute; top: 1rem; right: 1rem; 
+    background: rgba(0,0,0,.06);
+    z-index: 56;
+  }
+}
+
   @media (prefers-color-scheme: dark) {
     nav#nav-menu { background: rgba(15,20,27,.98); }
   }
@@ -374,5 +397,6 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 
 

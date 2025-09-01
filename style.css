@@ -56,22 +56,12 @@ nav a:hover {
   color: #f4a261;
 }
 
-/* Mobile menu toggle */
-
-.close-btn {
-  display: none;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  position: absolute;
-  top: 15px;
-  right: 20px;
+/* ========== Mobile Menu ========== */
+.menu-toggle {
+  display: none; /* hidden by default */
 }
 
-/* Responsive Navigation */
-/* Mobile menu */
+/* Mobile */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -80,7 +70,7 @@ nav a:hover {
     border: none;
     color: #fff;
     cursor: pointer;
-    margin-left: 10px; /* move button a bit from edge */
+    margin-left: 10px; /* little space from left */
     z-index: 1100;
   }
 
@@ -90,7 +80,7 @@ nav a:hover {
     background-color: #333;
     position: absolute;
     top: 60px;
-    left: 10px;   /* ✅ pushes menu 10px away from left edge */
+    left: 10px;   /* ✅ pushes menu a bit from left edge */
     width: 220px;
     padding: 15px;
     border-radius: 6px;
@@ -102,13 +92,14 @@ nav a:hover {
   }
 }
 
-
-  .menu-toggle {
-    display: block;
+/* Desktop */
+@media (min-width: 769px) {
+  .nav-menu {
+    display: flex !important;
   }
 
-  .close-btn {
-    display: block;
+  .menu-toggle {
+    display: none !important;
   }
 }
 
@@ -358,79 +349,3 @@ footer {
     height: 160px;
   }
 }
-/* Hide hamburger menu on larger screens */
-.menu-toggle {
-  display: none; /* hidden by default */
-}
-
-/* Show hamburger only on small screens */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    margin-right: 10px; /* spacing from edge */
-  }
-
-  nav {
-    display: none; /* hidden menu */
-    flex-direction: column;
-    background: #333;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100%;
-    padding: 20px;
-    z-index: 1000;
-  }
-
-  nav.active {
-    display: flex;
-  }
-}
-
-/* Show full nav menu on larger screens */
-@media (min-width: 769px) {
-  .nav-menu {
-    display: flex !important;
-  }
-
-  .menu-toggle {
-    display: none !important;
-  }
-}
-
-/* Hide nav menu by default on mobile */
-@media (max-width: 768px) {
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    background-color: #333;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    z-index: 1000;
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-
-
-
-
-
-
-
-

@@ -131,7 +131,6 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   border: none; 
   cursor: pointer; 
   padding: 12px; 
-  margin-right: 8px;
   border-radius: 8px; 
   color: var(--brand-700);
   font-size: 1.5rem;
@@ -139,6 +138,7 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 8px auto; /* Center horizontally and add vertical margin */
 }
 
 .close-btn { 
@@ -156,10 +156,28 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   background: rgba(0,0,0,.06); 
 }
 
+/* Header layout changes */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+
+header .logo {
+  font-family: Poppins, Inter, system-ui; 
+  font-weight: 800; 
+  letter-spacing: .3px;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  padding: 8px 16px; 
+  color: var(--brand-700);
+  text-align: center;
+}
+
 /* Off-canvas on small screens */
 @media (max-width: 900px) {
   header { 
-    grid-template-columns: 1fr auto;
+    flex-direction: column;
     position: relative;
   }
   
@@ -170,7 +188,7 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
     transform: translateX(100%);
     transition: transform .35s cubic-bezier(.2,.8,.2,1);
     flex-direction: column; 
-    padding: 16px; /* Reduced padding */
+    padding: 16px; 
     align-items: stretch; 
     gap: 8px; 
     box-shadow: var(--shadow-lg);
@@ -215,12 +233,37 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   }
 }
 
-
-/* Desktop layout refinement */
+/* Desktop layout */
 @media (min-width: 901px) {
-  .menu-toggle, .close-btn { display: none; }
-  header { grid-template-columns: 1fr auto; }
-  nav#nav-menu { padding-right: .5rem; }
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .menu-toggle, .close-btn {
+    display: none;
+  }
+  
+  nav#nav-menu {
+    display: flex;
+    gap: 8px;
+    position: static;
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  nav#nav-menu a {
+    background: transparent;
+    padding: 8px 16px;
+    border-radius: 8px;
+  }
+  
+  nav#nav-menu a:hover {
+    background: var(--brand-50);
+    color: var(--brand-700);
+  }
 }
 
 /* --- Banner / Hero ----------------------------------------------------- */
@@ -440,6 +483,7 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 
 
 

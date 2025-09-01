@@ -379,6 +379,39 @@ footer {
   }
 }
 
+/* Show full nav menu on larger screens */
+@media (min-width: 769px) {
+  .nav-menu {
+    display: flex !important;
+  }
+
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
+/* Hide nav menu by default on mobile */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
 
 
 

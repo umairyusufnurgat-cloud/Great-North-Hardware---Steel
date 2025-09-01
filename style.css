@@ -71,9 +71,16 @@ nav a:hover {
 }
 
 /* Responsive Navigation */
+/* Mobile menu */
 @media (max-width: 768px) {
   .menu-toggle {
-    position: relative;
+    display: block;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 10px; /* move button a bit from edge */
     z-index: 1100;
   }
 
@@ -83,17 +90,18 @@ nav a:hover {
     background-color: #333;
     position: absolute;
     top: 60px;
-    left: 0;  /* start from left of the toggle */
-    transform: translateX(-20%); /* adjust until it looks right */
-    width: 200px;
+    left: 10px;   /* ✅ pushes menu 10px away from left edge */
+    width: 220px;
+    padding: 15px;
+    border-radius: 6px;
     z-index: 1000;
+  }
+
+  .nav-menu.active {
+    display: flex;
   }
 }
 
-
-  nav.active {
-    display: flex;
-  }
 
   .menu-toggle {
     display: block;
@@ -417,6 +425,7 @@ footer {
     display: block;
   }
 }
+
 
 
 

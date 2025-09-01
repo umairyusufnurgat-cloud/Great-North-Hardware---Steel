@@ -76,15 +76,6 @@ h3 { font-weight: 600; }
 p { color: var(--muted); }
 
 /* --- Fancy Gradient Backdrop (subtle) --------------------------------- */
-/* --- Fancy Gradient Backdrop (subtle) --------------------------------- */
-body::before {
-  content: "";
-  position: fixed; inset: -20vh -20vw; z-index: -1;
-  background: radial-gradient(60% 60% at 20% 10%, rgba(35, 167, 179, .12) 0%, transparent 60%),
-              radial-gradient(50% 50% at 80% 20%, rgba(245, 165, 36, .10) 0%, transparent 60%);
-  filter: blur(40px) saturate(110%);
-}
-
 body {
   margin: 0; 
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
@@ -140,6 +131,7 @@ nav#nav-menu a:hover { background: var(--brand-50); color: var(--brand-700); }
 nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(--shadow-sm); }
 
 /* Mobile toggle */
+/* Mobile toggle */
 .menu-toggle { 
   background: transparent; 
   border: none; 
@@ -152,6 +144,8 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none; /* Remove the default focus outline */
+  -webkit-tap-highlight-color: transparent; /* Remove the blue highlight on mobile devices */
 }
 
 .close-btn { 
@@ -162,12 +156,15 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   color: var(--brand-700);
   font-size: 1.5rem;
   display: none;
+  outline: none; /* Remove the default focus outline */
+  -webkit-tap-highlight-color: transparent; /* Remove the blue highlight on mobile devices */
 }
 
 /* Remove hover effects */
 .menu-toggle:hover, .close-btn:hover { 
   background: transparent; 
 }
+
 
 /* Header layout changes */
 header {
@@ -497,6 +494,7 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 
 
 

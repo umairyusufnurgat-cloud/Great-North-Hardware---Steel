@@ -149,10 +149,6 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   border-radius: 8px; 
   color: var(--brand-700);
   font-size: 1.5rem;
-  z-index: 61;
-  position: absolute;
-  top: 16px;
-  left: 16px; /* Changed from right to left */
   display: none;
 }
 
@@ -174,13 +170,21 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
     transform: translateX(100%);
     transition: transform .35s cubic-bezier(.2,.8,.2,1);
     flex-direction: column; 
-    padding: 6rem 1.25rem 2rem; 
+    padding: 16px; /* Reduced padding */
     align-items: stretch; 
     gap: 8px; 
     box-shadow: var(--shadow-lg);
     z-index: 55;
   }
   
+  /* Position the close button inside the menu */
+  nav#nav-menu .close-btn {
+    display: none;
+    align-self: flex-end; /* Align to the right */
+    margin-bottom: 16px; /* Add space below */
+  }
+  
+  /* Show close button when menu is active */
   nav#nav-menu.active .close-btn {
     display: flex;
     align-items: center;
@@ -208,13 +212,6 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   
   nav#nav-menu a:hover { 
     background: rgba(0,0,0,.08); 
-  }
-  
-  /* Add some space at the top of the menu for the close button */
-  nav#nav-menu::before {
-    content: '';
-    display: block;
-    height: 60px;
   }
 }
 
@@ -443,6 +440,7 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 
 
 

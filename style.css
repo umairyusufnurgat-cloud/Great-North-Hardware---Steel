@@ -175,7 +175,7 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   }
   
   /* Hide menu toggle when menu is active */
-  nav#nav-menu.active + .menu-toggle {
+  body.menu-active .menu-toggle {
     display: none;
   }
   
@@ -416,6 +416,7 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 
 
 

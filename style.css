@@ -148,7 +148,9 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   position: absolute;
   top: 1rem;
   right: 1rem;
-  display: none; /* Initially hidden */
+  visibility: hidden; /* Use visibility instead of display */
+  opacity: 0; /* Start fully transparent */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .menu-toggle:hover, .close-btn:hover { background: rgba(0,0,0,.06); }
@@ -169,14 +171,15 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   
   /* Show close button only when menu is active */
   nav#nav-menu.active .close-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    visibility: visible;
+    opacity: 1;
   }
   
   /* Hide menu toggle when menu is active */
   body.menu-active .menu-toggle {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute; /* Take it out of flow */
   }
   
   @media (prefers-color-scheme: dark) {
@@ -416,6 +419,7 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 
 
 

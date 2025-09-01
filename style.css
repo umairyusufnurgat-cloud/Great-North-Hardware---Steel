@@ -87,12 +87,12 @@ body::before {
 /* --- Header / Navigation ---------------------------------------------- */
 header {
   position: sticky; top: 0; z-index: 50;
-  backdrop-filter: saturate(160%) blur(10px);
-  background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.6));
+  background: white;
   border-bottom: 1px solid var(--border);
 }
+
 @media (prefers-color-scheme: dark) {
-  header { background: linear-gradient(180deg, rgba(15,20,27,.75), rgba(15,20,27,.55)); }
+  header { background: var(--surface); }
 }
 
 header .logo {
@@ -367,3 +367,4 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+

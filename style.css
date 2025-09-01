@@ -72,18 +72,17 @@ nav a:hover {
 
 /* Responsive Navigation */
 @media (max-width: 768px) {
-  nav {
+  .nav-menu {
     display: none;
     flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100%;
-    background: #222;
-    padding: 60px 20px;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 10px;   /* was 0, move left by 10px */
+    width: 200px;
     z-index: 1000;
   }
+}
 
   nav.active {
     display: flex;
@@ -411,6 +410,7 @@ footer {
     display: block;
   }
 }
+
 
 
 

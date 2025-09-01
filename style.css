@@ -56,58 +56,58 @@ nav a:hover {
   color: #f4a261;
 }
 
-/* ========== Mobile Menu ========== */
-.menu-toggle {
-  display: none; /* hidden by default */
+/* Mobile menu toggle */
+.close-btn {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
 }
 
-/* Mobile */
-/* ===== Mobile Menu Slide-in (Right Side) ===== */
+/* Responsive Navigation */
+/* Mobile menu */
 @media (max-width: 768px) {
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-    background-color: #333;
-    position: fixed;
-    top: 0;
-    right: -250px;   /* hidden off-screen initially */
-    height: 100%;
-    width: 250px;
-    padding: 60px 20px;
-    transition: right 0.3s ease-in-out;
-    z-index: 1000;
-  }
-
-  .nav-menu.active {
-    right: 0;  /* slide into view */
-  }
-
   .menu-toggle {
     display: block;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     background: none;
     border: none;
     color: #fff;
     cursor: pointer;
+    margin-left: 10px; /* move button a bit from edge */
     z-index: 1100;
   }
 
-  nav a {
-    margin: 15px 0;
-    font-size: 1.1rem;
-    text-align: right;
+  /* ✅ Fix Mobile Dropdown Menu */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 5%;   /* moves menu slightly from left */
+    width: 90%; /* keeps it centered */
+    padding: 15px;
+    border-radius: 6px;
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    display: flex;
   }
 }
 
-/* Desktop */
-@media (min-width: 769px) {
-  .nav-menu {
-    display: flex !important;
-  }
+.menu-toggle {
+  display: block;
+}
 
-  .menu-toggle {
-    display: none !important;
-  }
+.close-btn {
+  display: block;
 }
 
 /* ========== Page Banner ========== */
@@ -357,3 +357,78 @@ footer {
   }
 }
 
+/* Hide hamburger menu on larger screens */
+.menu-toggle {
+  display: none; /* hidden by default */
+}
+
+/* Show hamburger only on small screens */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px; /* spacing from edge */
+  }
+
+  nav {
+    display: none; /* hidden menu */
+    flex-direction: column;
+    background: #333;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+  }
+}
+
+/* Show full nav menu on larger screens */
+@media (min-width: 769px) {
+  /* ✅ Fix Desktop Nav */
+  nav {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-menu {
+    display: flex !important;
+  }
+
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
+/* Hide nav menu by default on mobile */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}

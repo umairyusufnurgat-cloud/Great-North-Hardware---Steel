@@ -122,7 +122,6 @@ header .logo {
   letter-spacing: .3px;
   font-size: clamp(1.05rem, 2.2vw, 1.35rem);
   color: var(--brand-700);
-  margin-bottom: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -152,52 +151,16 @@ nav#nav-menu a.active {
   font-weight: 600;
 }
 
-/* Mobile menu toggle - hidden by default */
-.menu-toggle, .close-btn { 
-  display: none;
-}
-
-/* Mobile toggle */
-.menu-toggle, .close-btn { 
-  background: transparent; border: 0; cursor: pointer; 
-  padding: .75rem; margin-right: .25rem; 
-  border-radius: .75rem; 
-  color: var(--brand-700);
-  font-size: 1.5rem;
-  z-index: 60;
-}
-.menu-toggle:hover, .close-btn:hover { background: rgba(0,0,0,.06); }
-
-/* Off-canvas on small screens */
-@media (max-width: 900px) {
-  header { grid-template-columns: 1fr auto; }
+/* Hide navigation on mobile devices */
+@media (max-width: 768px) {
   nav#nav-menu {
-    position: fixed; inset: 0 0 0 30%; /* right 70% panel */
-    background: rgba(255,255,255,.98);
-    transform: translateX(100%);
-    transition: transform .35s cubic-bezier(.2,.8,.2,1);
-    flex-direction: column; padding: 6rem 1.25rem 2rem; 
-    align-items: stretch; gap: .5rem; 
-    box-shadow: var(--shadow-lg);
-  }
-  @media (prefers-color-scheme: dark) {
-    nav#nav-menu { background: rgba(15,20,27,.98); }
-  }
-  nav#nav-menu.active { transform: translateX(0); }
-  nav#nav-menu a { background: rgba(0,0,0,.04); color: inherit; }
-  nav#nav-menu a:hover { background: rgba(0,0,0,.08); }
-
-  .close-btn {
-    position: absolute; top: 1rem; right: 1rem; 
-    background: rgba(0,0,0,.06);
+    display: none;
   }
 }
 
-/* Desktop layout refinement */
-@media (min-width: 901px) {
-  .menu-toggle, .close-btn { display: none; }
-  header { grid-template-columns: 1fr auto; }
-  nav#nav-menu { padding-right: .5rem; }
+/* Mobile menu toggle - hidden completely */
+.menu-toggle, .close-btn { 
+  display: none !important;
 }
 
 /* --- Banner / Hero ----------------------------------------------------- */
@@ -448,4 +411,5 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 

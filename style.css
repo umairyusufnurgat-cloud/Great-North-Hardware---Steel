@@ -62,33 +62,40 @@ nav a:hover {
 }
 
 /* Mobile */
+/* ===== Mobile Menu Slide-in (Right Side) ===== */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    margin-left: 10px; /* little space from left */
-    z-index: 1100;
-  }
-
   .nav-menu {
-    display: none;
+    display: flex;
     flex-direction: column;
     background-color: #333;
-    position: absolute;
-    top: 60px;
-    left: 10px;   /* ✅ pushes menu a bit from left edge */
-    width: 220px;
-    padding: 15px;
-    border-radius: 6px;
+    position: fixed;
+    top: 0;
+    right: -250px;   /* hidden off-screen initially */
+    height: 100%;
+    width: 250px;
+    padding: 60px 20px;
+    transition: right 0.3s ease-in-out;
     z-index: 1000;
   }
 
   .nav-menu.active {
-    display: flex;
+    right: 0;  /* slide into view */
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  nav a {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    text-align: right;
   }
 }
 
@@ -349,3 +356,4 @@ footer {
     height: 160px;
   }
 }
+

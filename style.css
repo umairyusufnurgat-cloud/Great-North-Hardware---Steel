@@ -128,46 +128,32 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
 /* Mobile toggle */
 .menu-toggle { 
   background: transparent; 
-  border: 0; 
+  border: none; 
   cursor: pointer; 
-  padding: 0; 
-  margin: 0;
+  padding: 12px; 
+  margin-right: 8px;
+  border-radius: 8px; 
   color: var(--brand-700);
   font-size: 1.5rem;
-  z-index: 1000; /* Very high z-index */
+  z-index: 60;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px; /* Explicit width */
-  height: 44px; /* Explicit height */
-  position: relative; /* Ensure positioning context */
-  /* Make sure it's above everything */
-  pointer-events: auto;
 }
 
 .close-btn { 
   background: transparent; 
-  border: 0; 
+  border: none; 
   cursor: pointer; 
-  padding: 0;
-  margin: 0;
-  border-radius: 0; 
+  padding: 12px;
+  border-radius: 8px; 
   color: var(--brand-700);
   font-size: 1.5rem;
-  z-index: 1001; /* Even higher z-index */
+  z-index: 61;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 44px; /* Explicit width */
-  height: 44px; /* Explicit height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0; /* Start fully transparent */
-  visibility: hidden; /* Start hidden */
-  transform: scale(0.8); /* Start slightly smaller */
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-  pointer-events: none; /* Disable pointer events when hidden */
+  top: 16px;
+  right: 16px;
+  display: none;
 }
 
 .menu-toggle:hover, .close-btn:hover { 
@@ -178,39 +164,31 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
 @media (max-width: 900px) {
   header { 
     grid-template-columns: 1fr auto;
-    position: relative; /* Ensure positioning context */
-    z-index: 999; /* High z-index for header */
+    position: relative;
   }
   
   nav#nav-menu {
     position: fixed; 
-    inset: 0 0 0 70%; /* right 30% panel */
+    inset: 0 0 0 70%;
     background: rgba(255,255,255,.98);
     transform: translateX(100%);
     transition: transform .35s cubic-bezier(.2,.8,.2,1);
     flex-direction: column; 
     padding: 6rem 1.25rem 2rem; 
     align-items: stretch; 
-    gap: .5rem; 
+    gap: 8px; 
     box-shadow: var(--shadow-lg);
-    z-index: 998; /* Below buttons but above other content */
+    z-index: 55;
   }
   
-  /* Show close button only when menu is active */
   nav#nav-menu.active .close-btn {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-    pointer-events: auto; /* Enable pointer events when visible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
-  /* Hide menu toggle when menu is active */
   body.menu-active .menu-toggle {
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0.8);
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    pointer-events: none; /* Disable pointer events when hidden */
+    display: none;
   }
   
   @media (prefers-color-scheme: dark) {
@@ -224,28 +202,14 @@ nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(
   nav#nav-menu a { 
     background: rgba(0,0,0,.04); 
     color: inherit; 
-    padding: 1rem;
-    border-radius: .75rem;
+    padding: 16px;
+    border-radius: 8px;
   }
   
   nav#nav-menu a:hover { 
     background: rgba(0,0,0,.08); 
   }
-  
-  /* Add a visual indicator for the clickable area during development */
-  .menu-toggle::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 1px dashed rgba(14, 122, 131, 0.3); /* Visual indicator */
-    border-radius: 50%; /* Circular indicator */
-    pointer-events: none; /* Don't interfere with clicks */
-  }
 }
-
 
 /* Desktop layout refinement */
 @media (min-width: 901px) {
@@ -471,6 +435,7 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 
 
 

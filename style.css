@@ -140,30 +140,33 @@ nav#nav-menu a:hover { background: var(--brand-50); color: var(--brand-700); }
 nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(--shadow-sm); }
 
 /* Mobile toggle */
+/* Mobile toggle */
 .menu-toggle { 
-  background: transparent; 
+  background: none; 
   border: none; 
   cursor: pointer; 
-  padding: 12px; 
-  border-radius: 8px; 
+  padding: 0; 
+  margin: 12px auto 8px; /* Center horizontally and add vertical margin */
   color: var(--brand-700);
   font-size: 1.5rem;
   z-index: 60;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 8px auto; /* Center horizontally and add vertical margin */
+  width: 30px; /* Set explicit width */
+  height: 20px; /* Set explicit height */
 }
 
 .close-btn { 
-  background: transparent; 
+  background: none; 
   border: none; 
   cursor: pointer; 
-  padding: 12px;
-  border-radius: 8px; 
+  padding: 0;
   color: var(--brand-700);
   font-size: 1.5rem;
   display: none;
+  width: 30px; /* Set explicit width */
+  height: 30px; /* Set explicit height */
 }
 
 .menu-toggle:hover, .close-btn:hover { 
@@ -497,6 +500,7 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+
 
 
 

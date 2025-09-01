@@ -52,27 +52,31 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
-    const closeBtn = document.getElementById("close-btn");
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+  const closeBtn = document.getElementById("close-btn");
 
-    // Open menu
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.add("active");
-    });
-
-    // Close menu
-    closeBtn.addEventListener("click", () => {
-      navMenu.classList.remove("active");
-    });
-
-    // Close when clicking outside nav
-    document.addEventListener("click", (e) => {
-      if (navMenu.classList.contains("active") && !navMenu.contains(e.target) && e.target !== menuToggle) {
-        navMenu.classList.remove("active");
-      }
-    });
+  // Open menu
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.add("active");
+    document.body.classList.add("menu-active"); // Add class to body
   });
+
+  // Close menu
+  closeBtn.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+    document.body.classList.remove("menu-active"); // Remove class from body
+  });
+
+  // Close when clicking outside nav
+  document.addEventListener("click", (e) => {
+    if (navMenu.classList.contains("active") && !navMenu.contains(e.target) && e.target !== menuToggle) {
+      navMenu.classList.remove("active");
+      document.body.classList.remove("menu-active"); // Remove class from body
+    }
+  });
+});
 </script>
 </body>
 </html>
+

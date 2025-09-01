@@ -100,14 +100,20 @@ body::before {
 
 /* --- Header / Navigation ---------------------------------------------- */
 header {
-  position: sticky; top: 0; z-index: 50;
-  backdrop-filter: saturate(160%) blur(10px);
-  background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.6));
+  position: sticky; 
+  top: 0; 
+  z-index: 50;
+  background: white;
   border-bottom: 1px solid var(--border);
-  text-align: center; /* Center header content */
+  padding: 1rem;
+  text-align: center;
 }
+
 @media (prefers-color-scheme: dark) {
-  header { background: linear-gradient(180deg, rgba(15,20,27,.75), rgba(15,20,27,.55)); }
+  header { 
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
 }
 
 header .logo {
@@ -115,23 +121,41 @@ header .logo {
   font-weight: 800; 
   letter-spacing: .3px;
   font-size: clamp(1.05rem, 2.2vw, 1.35rem);
-  padding: 1rem; 
   color: var(--brand-700);
-  margin: 0 auto; /* Center logo */
+  margin-bottom: 1rem;
 }
+
 @media (prefers-color-scheme: dark) {
   header .logo { color: #d9f3f5; }
 }
 
-/* Header layout */
-header { display: grid; grid-template-columns: 1fr auto; align-items: center; justify-content: center; }
-nav#nav-menu { display: flex; gap: .5rem; align-items: center; justify-content: center; }
-nav#nav-menu a { 
-  padding: .65rem .9rem; border-radius: .75rem; 
-  font-weight: 600; color: #334155; transition: .25s ease; 
+nav#nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-nav#nav-menu a:hover { background: var(--brand-50); color: var(--brand-700); }
-nav#nav-menu a.active { background: var(--brand); color: white; box-shadow: var(--shadow-sm); }
+
+nav#nav-menu a { 
+  padding: 0.5rem 1rem; 
+  font-weight: 500; 
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+nav#nav-menu a:hover { 
+  color: var(--brand-500);
+}
+
+nav#nav-menu a.active { 
+  color: var(--brand-700);
+  font-weight: 600;
+}
+
+/* Mobile menu toggle - hidden by default */
+.menu-toggle, .close-btn { 
+  display: none;
+}
 
 /* Mobile toggle */
 .menu-toggle, .close-btn { 
@@ -424,3 +448,4 @@ footer {
   .page-banner::before { background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.25)); }
   a { text-decoration: underline; color: black; }
 }
+

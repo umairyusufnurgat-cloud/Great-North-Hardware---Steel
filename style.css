@@ -1,22 +1,10 @@
-/* ========== Global Styles ========== */
+/* ========== General Styles ========== */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding-top: 80px; /* so content starts below fixed header */
+  font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f9f9f9;
+  background: #f9f9f9;
   color: #333;
-}
-
-h1, h2, h3 {
-  margin-bottom: 15px;
-  color: #222;
-  text-align: center;
-}
-
-p {
-  margin-bottom: 15px;
-  text-align: center;
 }
 
 /* ========== Header & Navbar ========== */
@@ -30,13 +18,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;  /* ✅ increased from 20px to 30px */
+  padding: 15px 25px;  /* ✅ pushes logo & nav inward */
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-
-header .logo {
+.logo {
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -44,34 +31,25 @@ header .logo {
 nav {
   display: flex;
   gap: 15px;
+  margin-right: 15px; /* ✅ keeps "Contact" away from edge */
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  font-size: 1rem;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #f4a261;
+  color: #ffd700;
 }
 
-/* Mobile menu toggle */
-.close-btn {
+.menu-toggle {
   display: none;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  position: absolute;
-  top: 15px;
-  right: 20px;
 }
 
-/* Responsive Navigation */
-/* Mobile menu */
+/* ========== Mobile Styles ========== */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -80,19 +58,23 @@ nav a:hover {
     border: none;
     color: #fff;
     cursor: pointer;
-    margin-left: 10px; /* move button a bit from edge */
+    margin-left: 10px;
+    margin-right: 15px; /* ✅ shifts hamburger away from edge */
     z-index: 1100;
   }
 
-  /* ✅ Fix Mobile Dropdown Menu */
+  nav {
+    display: none; /* hidden by default on mobile */
+  }
+
   .nav-menu {
     display: none;
     flex-direction: column;
     background-color: #333;
     position: absolute;
     top: 60px;
-    left: 5%;   /* moves menu slightly from left */
-    width: 90%; /* keeps it centered */
+    right: 15px;   /* ✅ was 0 → now pushed inwards */
+    width: 220px;
     padding: 15px;
     border-radius: 6px;
     z-index: 1000;
@@ -101,336 +83,83 @@ nav a:hover {
   .nav-menu.active {
     display: flex;
   }
+
+  .nav-menu a {
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+  }
+
+  .nav-menu a:last-child {
+    border-bottom: none;
+  }
 }
 
-.menu-toggle {
-  display: block;
-}
-
-.close-btn {
-  display: block;
-}
-
-/* ========== Page Banner ========== */
-.page-banner {
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
+/* ========== Sections ========== */
+section {
   padding: 80px 20px;
+  margin-top: 60px;
 }
 
-.page-banner h2 {
-  font-size: 2rem;
-  margin: 0;
-}
-
-/* ========== Content Section ========== */
-.content {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.content h2 {
-  margin-bottom: 10px;
+h2 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-/* ========== Values Section ========== */
-.values {
-  padding: 40px 20px;
-  background: #fff;
-}
-
-.values-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+/* ========== Product Cards ========== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
-.value-box {
-  background: #f4f4f4;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  flex: 1 1 250px;
-  max-width: 300px;
-}
-
-.value-box img {
-  max-width: 60px;
-  margin-bottom: 10px;
-}
-
-/* ========== Team Section (About Page) ========== */
-.team {
-  padding: 40px 20px;
-  background: #fafafa;
-  text-align: center;
-}
-
-.team img {
-  margin-top: 20px;
-  max-width: 100%;
-  border-radius: 8px;
-}
-
-/* ========== Contact Page ========== */
-.contact {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 20px;
-}
-
-.contact-form, .contact-info {
-  flex: 1 1 400px;
+.product-card {
   background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form input,
-.contact-form textarea {
-  margin-bottom: 15px;
-  padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
 }
 
-.contact-form button {
-  background: #222;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  border-radius: 5px;
-  transition: background 0.3s ease;
+.product-card:hover {
+  transform: translateY(-5px);
 }
 
-.contact-form button:hover {
-  background: #f4a261;
-}
-
-.contact-info h3 {
-  margin-bottom: 15px;
-}
-
-.contact-info p {
-  margin: 10px 0;
-  text-align: left;
-}
-
-.contact-info i {
-  margin-right: 10px;
-  color: #f4a261;
-}
-
-.map iframe {
-  margin-top: 15px;
-  border-radius: 8px;
+.product-card img {
   width: 100%;
-}
-
-/* ========== Gallery Section (Home Page) ========== */
-.gallery {
-  padding: 40px 20px;
-  background: #fff;
-  text-align: center;
-}
-
-.gallery-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.gallery-grid img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 8px;
+  height: 180px;
   object-fit: cover;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-info h3 {
+  margin-top: 0;
+}
+
+.product-info a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.product-info a:hover {
+  background: #ffd700;
+  color: #333;
 }
 
 /* ========== Footer ========== */
 footer {
   text-align: center;
-  padding: 20px;
-  background: #222;
+  padding: 15px;
+  background: #333;
   color: #fff;
   margin-top: 40px;
 }
-
-/* ========== Products Page ========== */
-.products {
-  padding: 40px 20px;
-  background: #fff;
-  text-align: center;
-}
-
-.products h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-/* Support both class names: .product-grid and .products-grid */
-.products-grid,
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.product-card {
-  background: #f4f4f4;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-
-.product-card img {
-  width: 100%;
-  height: 180px;          /* keeps cards even */
-  object-fit: cover;
-  display: block;
-}
-
-.product-card h3 {
-  margin: 12px 12px 16px;
-  font-size: 1.15rem;
-  color: #222;
-}
-
-/* If your HTML uses a .product-info wrapper (some versions do) */
-.product-info {
-  padding: 16px;
-  text-align: center;
-}
-
-.product-info p {
-  margin: 8px 0 12px;
-  color: #555;
-}
-
-.product-info a {
-  display: inline-block;
-  padding: 10px 14px;
-  background: #222;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background 0.2s ease;
-}
-
-.product-info a:hover {
-  background: #f4a261;
-  color: #222;
-}
-
-/* Small screens tweaks */
-@media (max-width: 480px) {
-  .product-card img {
-    height: 160px;
-  }
-}
-
-/* Hide hamburger menu on larger screens */
-.menu-toggle {
-  display: none; /* hidden by default */
-}
-
-/* Show hamburger only on small screens */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    margin-right: 10px; /* spacing from edge */
-  }
-
-  nav {
-    display: none; /* hidden menu */
-    flex-direction: column;
-    background: #333;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100%;
-    padding: 20px;
-    z-index: 1000;
-  }
-
-  nav.active {
-    display: flex;
-  }
-}
-
-/* Show full nav menu on larger screens */
-@media (min-width: 769px) {
-  /* ✅ Fix Desktop Nav */
-  nav {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .nav-menu {
-    display: flex !important;
-  }
-
-  .menu-toggle {
-    display: none !important;
-  }
-}
-
-/* Hide nav menu by default on mobile */
-@media (max-width: 768px) {
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    background-color: #333;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    z-index: 1000;
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-

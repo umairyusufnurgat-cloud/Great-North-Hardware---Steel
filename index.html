@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Great North Hardware & Steel Ltd</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Great North Hardware & Steel Ltd</div>
+
+  <!-- Mobile menu toggle -->
+  <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Nav menu -->
+  <nav id="nav-menu">
+    <button class="close-btn" id="close-btn" aria-label="Close Menu">
+      <i class="fas fa-times"></i>
+    </button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html" class="cart-link">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count" class="cart-badge">0</span>
+    </a>
+  </nav>
+</header>
+
+<section class="page-banner" style="background-image: url('images/metal.webp');">
+  <h2>Welcome to Great North Hardware</h2>
+</section>
+
+<section class="content">
+  <h2>Your Trusted Partner for Hardware & Steel</h2>
+  <p>We provide a wide range of building materials, steel, tools, and home improvement products.</p>
+  
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search products..." class="search-input">
+    <i class="fas fa-search search-icon"></i>
+  </div>
+  
+  <div class="stats-grid">
+    <div class="stat-card">
+      <i class="fas fa-users"></i>
+      <h3>2,500+</h3>
+      <p>Happy Customers</p>
+    </div>
+    <div class="stat-card">
+      <i class="fas fa-tools"></i>
+      <h3>5,000+</h3>
+      <p>Products Available</p>
+    </div>
+    <div class="stat-card">
+      <i class="fas fa-truck"></i>
+      <h3>24/7</h3>
+      <p>Support & Delivery</p>
+    </div>
+    <div class="stat-card">
+      <i class="fas fa-calendar-alt"></i>
+      <h3>15+</h3>
+      <p>Years Experience</p>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-shipping-fast"></i>
+        <h3>Fast Delivery</h3>
+        <p>Same-day delivery available for local orders. We ensure your materials reach you on time.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-tools"></i>
+        <h3>Expert Consultation</h3>
+        <p>Our experienced team provides professional advice for your construction and hardware needs.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-handshake"></i>
+        <h3>Bulk Orders</h3>
+        <p>Special pricing and dedicated support for contractors and large-scale projects.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-award"></i>
+        <h3>Quality Guarantee</h3>
+        <p>All our products come with quality assurance and manufacturer warranties.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="container">
+    <h2>Featured Products</h2>
+    <div class="gallery-grid">
+      <div class="product-showcase">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop" alt="Steel Construction">
+        <div class="showcase-overlay">
+          <h3>Steel & Metal</h3>
+          <p>Premium quality steel products</p>
+        </div>
+      </div>
+      <div class="product-showcase">
+        <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=400&h=300&fit=crop" alt="Construction Tools">
+        <div class="showcase-overlay">
+          <h3>Professional Tools</h3>
+          <p>Durable construction equipment</p>
+        </div>
+      </div>
+      <div class="product-showcase">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Hardware Store">
+        <div class="showcase-overlay">
+          <h3>Hardware Supplies</h3>
+          <p>Complete range of fasteners</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Excellent quality products and outstanding customer service. They've been our go-to supplier for over 5 years."</p>
+        <div class="customer-info">
+          <strong>John Mitchell</strong>
+          <span>Construction Manager</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Fast delivery and competitive prices. Great North Hardware always delivers exactly what we need on time."</p>
+        <div class="customer-info">
+          <strong>Sarah Chen</strong>
+          <span>Project Coordinator</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Professional team with deep knowledge. They helped us choose the right materials for our project."</p>
+        <div class="customer-info">
+          <strong>Mike Rodriguez</strong>
+          <span>Contractor</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Great North Hardware & Steel Ltd. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+  const closeBtn = document.getElementById("close-btn");
+
+  // Open menu
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.add("active");
+    document.body.classList.add("menu-active"); // Add class to body
+  });
+
+  // Close menu
+  closeBtn.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+    document.body.classList.remove("menu-active"); // Remove class from body
+  });
+
+  // Close when clicking outside nav
+  document.addEventListener("click", (e) => {
+    if (navMenu.classList.contains("active") && !navMenu.contains(e.target) && e.target !== menuToggle) {
+      navMenu.classList.remove("active");
+      document.body.classList.remove("menu-active"); // Remove class from body
+    }
+  });
+});
+</script>
+</body>
+</html>
+
